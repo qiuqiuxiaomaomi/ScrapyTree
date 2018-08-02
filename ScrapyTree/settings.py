@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'ScrapyTree.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'ScrapyTree (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -64,9 +64,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'ScrapyTree.pipelines.ScrapytreePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'ScrapyTree.pipelines.ScrapytreePipeline': 300,
+    'ScrapyTree.pipelines.JsonWithEncodingPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,3 +89,9 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+MYSQL_HOST='10.25.193.118'
+MYSQL_DBNAME='partyconstructionl'
+MYSQL_USER='party'
+MYSQL_PASSWD='kara$party'
+MYSQL_PORT=3306
